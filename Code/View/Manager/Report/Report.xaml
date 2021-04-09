@@ -1,0 +1,53 @@
+﻿<Page x:Class="UGoods.View.Manager.Report.Report"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:vm="clr-namespace:UGoods.ViewModel.Manager"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Report">
+    <Page.DataContext>
+        <vm:ReportViewModel/>
+    </Page.DataContext>
+    <Grid Background="WhiteSmoke">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+        <Button Background="#f4cc70" 
+                Command="{Binding ToGoBack}">
+            <Image Source="pack://application:,,,/Styles/images/left-arrow.png"/>
+            
+        </Button>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="Доходы" HorizontalAlignment="Center" FontSize="25" Foreground="#DE7A22"/>
+                <Button Background="#f4cc70"  
+                Height="100" Width="200"
+                Command="{Binding CGenerate}">
+                <Image Source="pack://application:,,,/Styles/images/2.png"/>
+                <Button.ToolTip>
+                Сгенерировать отчёт по доходам за всё время
+            </Button.ToolTip>
+        </Button>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="Продажи" HorizontalAlignment="Center" FontSize="25" Foreground="#6ab178"/>
+                <Button Background="#f4cc70"  
+                Height="100" Width="200"
+                Command="{Binding CGenerateSells}">
+                    <Image Source="pack://application:,,,/Styles/images/2.png"/>
+                    <Button.ToolTip>
+                        Сгенерировать отчёт по продажам
+                    </Button.ToolTip>
+                </Button>
+                
+            </StackPanel>
+            
+        </StackPanel>
+        
+    </Grid>
+</Page>
